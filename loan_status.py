@@ -8,10 +8,16 @@ app = Flask(__name__)
 model_pickle = open("./classifier.pkl", "rb")
 clf = pickle.load(model_pickle)
 
-
+#home page
 @app.route("/")
 def hello_ping():
     return {'message':'Hi, Welcome to Loan Status Classification Model!'}
+
+#ping page
+@app.route("/ping")
+def pinger():
+    return {'message':'Hi, I am pinging'}
+
 
 @app.route("/predict", methods=['POST'])
 def prediction():
@@ -40,4 +46,5 @@ def prediction():
     print("CHECK 2")
 
     # Return a proper JSON response
+
     return jsonify({"Loan_approval_status": int(result[0])})
