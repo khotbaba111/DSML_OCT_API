@@ -24,4 +24,5 @@ def test_prediction (client):
     "Credit_History": 1.0
     }
     resp = client.post('/predict', json = test_data)
+    assert resp.status_code== 200
     assert resp.json == {'Loan_approval_status': 0}
