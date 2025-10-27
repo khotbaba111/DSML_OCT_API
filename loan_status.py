@@ -11,7 +11,7 @@ clf = pickle.load(model_pickle)
 #home page
 @app.route("/")
 def hello_ping():
-    return {'message':'Hi, Welcome to Loan Status Classification Model Version 1 !'}
+    return {'message':'Hi, Welcome to Loan Status Classification Model Version 2 !'}
 
 #ping page
 @app.route("/ping")
